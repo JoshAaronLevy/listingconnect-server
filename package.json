@@ -1,13 +1,18 @@
 {
   "name": "listingconnect-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "ListingConnect API",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "express",
+    "postgresql",
+    "knexjs"
+  ],
+  "author": "Josh Levy",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
