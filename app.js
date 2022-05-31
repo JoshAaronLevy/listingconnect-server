@@ -5,6 +5,7 @@ const app = express();
 const port = parseInt(process.env.PORT || 8080);
 
 const users = require('./routes/users');
+const administrators = require('./routes/administrators');
 const companies = require('./routes/companies');
 const agents = require('./routes/agents');
 const sellers = require('./routes/sellers');
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/users', users);
+app.use('/administrators', administrators);
 app.use('/companies', companies);
 app.use('/agents', agents);
 app.use('/sellers', sellers);

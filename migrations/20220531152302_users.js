@@ -1,15 +1,15 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.up = function(knex) {
-  
+exports.up = function (knex, Promise) {
+	return knex.schema.createTable('users', users => {
+		users.increments();
+		users.timestamp('signup_date');
+		users.string('status');
+		users.string('email');
+		users.string('username');
+		users.jsonb('roles');
+		users.timestamp('last_active');
+	});
 };
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.down = function(knex) {
-  
+exports.down = function (knex, Promise) {
+	return knex.schema.dropTableIfExists('users');
 };
