@@ -1,12 +1,12 @@
 exports.up = function (knex, Promise) {
 	return knex.schema.createTable('administrators', administrators => {
 		administrators.increments();
-		administrators.timestamp('signup_date');
-		administrators.string('status');
-		administrators.string('email');
-		administrators.string('username');
-		administrators.jsonb('roles');
-		administrators.timestamp('last_active');
+		administrators.float('user', [0]);
+		administrators.string('first_name');
+		administrators.string('last_name');
+		administrators.float('phone', [0]);
+		administrators.jsonb('managed_accounts');
+		administrators.jsonb('permissions');
 	});
 };
 
