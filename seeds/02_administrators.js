@@ -8,7 +8,9 @@ exports.seed = function (knex, Promise) {
           status: "Active",
           email: 'joshaaronlevy@gmail.com',
           username: 'joshaaronlevy@gmail.com',
-          roles: ["Administrator", "Agent", "Seller", "Buyer"],
+          roles: {
+            activeRoles: ["Administrator", "Agent", "Seller", "Buyer"]
+          },
           last_active: null
         }
       ]);
