@@ -1,12 +1,12 @@
 exports.up = function (knex, Promise) {
 	return knex.schema.createTable('companies', companies => {
 		companies.increments();
-		companies.timestamp('signup_date');
-		companies.string('status');
-		companies.string('email');
+		companies.timestamp('created_date');
+		companies.string('name');
+		companies.float('parent', [0]);
 		companies.string('username');
 		companies.jsonb('roles');
-		companies.timestamp('last_active');
+		companies.timestamp('last_updated');
 	});
 };
 
